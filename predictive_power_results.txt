@@ -1,0 +1,18 @@
+=== PREDICTIVE POWER TEST RESULTS ===
+
+Number of peaks identified: 6
+Number of predictions generated: 24
+Match rate for GR predictions: 0.0833
+Mean match rate for random predictions: 0.0888
+Standard deviation of random match rates: 0.0463
+Z-score: -0.1188
+P-value: 0.5473
+Prediction power (ratio): 0.94x
+Phi optimality: -0.0619
+Interpretation: slightly negative
+
+=== PEAK MULTIPOLES ===
+584.756069, 854.675226, 1124.63318, 1334.61223, 1454.60297, 1544.59698
+
+=== PREDICTIONS ===
+899, 144, 528, 1820, 556, 430, 946, 695, 55, 825, 955, 1597, 326, 590, 89, 987, 223, 610, 1383, 233, 361, 377, 1531, 510

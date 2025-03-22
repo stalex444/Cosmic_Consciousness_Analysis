@@ -1,0 +1,11 @@
+=== GOLDEN SYMMETRIES TEST RESULTS ===
+
+Mean asymmetry for golden ratio: nan
+Mean asymmetry for alternative constants: 2.2989
+Z-score: nan
+P-value: nan
+Symmetry ratio: 1.00x
+Phi optimality: -0.0000
+
+Phi optimality interpretation: minimal
+The golden symmetries test shows a minimal alignment with golden ratio optimality.

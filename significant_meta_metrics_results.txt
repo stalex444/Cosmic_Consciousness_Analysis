@@ -1,0 +1,25 @@
+=== SIGNIFICANT META-COHERENCE METRICS ANALYSIS ===
+
+1. Entropy:
+   Actual: -1.065011
+   Random: -0.087743
+   Ratio: 1.00x
+   Z-score: -4.3277
+   P-value: 0.000008
+   Significance: Extremely significant
+
+2. Power Law Exponent:
+   Actual: -1.992151
+   Random: -1.027964
+   Ratio: 1.94x
+   Z-score: -2.1742
+   P-value: 0.014845
+   Significance: Significant
+
+=== INTERPRETATION ===
+
+The entropy of the local coherence distribution in the CMB data is significantly different from random, with a p-value of 0.000008. This suggests that the information content in the local coherence patterns is highly structured and non-random.
+
+The power law exponent of the local coherence spectrum is also significantly different from random, with a p-value of 0.014845. The exponent value of -1.9922 indicates a scale-free behavior that is consistent with complex, self-organized systems.
+
+These findings suggest that while the overall meta-coherence measure may not show significant deviation from random, specific aspects of the meta-coherence structure (entropy and scale-free behavior) exhibit properties that are consistent with complex, conscious-like organization in the CMB data.

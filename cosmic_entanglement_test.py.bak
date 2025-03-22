@@ -1,0 +1,344 @@
+{{ ... }}
+    def generate_report(self):
+        """Generate a detailed report of the test results."""
+        if not self.results:
+            print("No results to report. Run the test first.")
+            return
+            
+        print("\n" + "="*80)
+        print("COSMIC ENTANGLEMENT TEST REPORT")
+        print("="*80)
+        
+        print("\nTest completed in {:.2f} seconds.".format(self.results['execution_time']))
+        
+        # Bell inequality results
+        bell = self.results['bell_results']
+        print("\n1. BELL-TYPE INEQUALITY VIOLATIONS")
+        print("-"*50)
+        print("Total region pairs showing violations: {} out of 8".format(bell['total_violations']))
+        print("Maximum violation strength: {:.4f}".format(bell['max_violation']))
+        print("Average violation strength: {:.4f}".format(bell['violation_strength']))
+        
+        # Classical limit reference
+        print("\nReference values:")
+        print("- Classical limit: Bell parameter |S| ≤ 2")
+        print("- Quantum limit: Bell parameter |S| ≤ 2√2 ≈ 2.83")
+        
+        # Statistical significance
+        print("\nStatistical significance:")
+        print("Z-score: {:.4f}".format(self.results['z_score']))
+        print("P-value: {:.8f}".format(self.results['p_value']))
+        
+        # Interpret violation strength
+        interpretation = ""
+        if bell['violation_strength'] > 0.8:
+            interpretation = "STRONG violation - exceeds quantum prediction"
+        elif bell['violation_strength'] > 0.5:
+            interpretation = "SIGNIFICANT violation - approaches quantum limit"
+        elif bell['violation_strength'] > 0.2:
+            interpretation = "MODERATE violation - exceeds classical limit"
+        elif bell['violation_strength'] > 0:
+            interpretation = "WEAK violation - marginally exceeds classical limit"
+        else:
+            interpretation = "NO violation - consistent with classical physics"
+        
+        print("\nInterpretation: {}".format(interpretation))
+        
+        # Phi angular correlation
+        phi_corr = self.results['phi_correlation']
+        print("\n2. PHI-RELATED ANGULAR CORRELATIONS")
+        print("-"*50)
+        print("Correlation peaks found at {} different angles".format(len(phi_corr['peak_angles'])))
+        print("Phi-relatedness of correlation structure: {:.4f}".format(phi_corr['phi_relatedness']))
+        
+        # Non-locality measure
+        non_local = self.results['non_locality']
+        print("\n3. QUANTUM NON-LOCALITY MEASURES")
+        print("-"*50)
+        print("Average mutual information between antipodal regions: {:.4f}".format(non_local['avg_mutual_info']))
+        print("Contextuality measure: {:.4f}".format(non_local['contextuality']))
+        
+        # Comparison with surrogate data
+        surrogate = self.results['surrogate_results']
+        print("\n4. COMPARISON WITH SURROGATE DATA")
+        print("-"*50)
+        print("CMB data Bell violation: {:.4f}".format(bell['violation_strength']))
+        print("Surrogate data Bell violation: {:.4f}".format(surrogate['bell_violation']))
+        print("Ratio: {:.2f}x stronger in CMB data".format(self.results['ratio']))
+        print("Phi optimality: {:.4f}".format(self.results['phi_optimality']))
+        
+        # Overall conclusion
+        print("\nOVERALL CONCLUSION")
+        print("-"*50)
+        
+        if self.results['p_value'] < 0.05:
+            if self.results['phi_optimality'] > 0.5:
+                print("The CMB data shows STATISTICALLY SIGNIFICANT Bell inequality violations with")
+                print("STRONG evidence for phi-optimized non-local correlations between antipodal regions.")
+                print("These findings suggest quantum-like entanglement patterns in the early universe")
+                print("that are organized according to golden ratio principles.")
+            elif self.results['phi_optimality'] > 0:
+                print("The CMB data shows STATISTICALLY SIGNIFICANT Bell inequality violations with")
+                print("MODERATE evidence for phi-related non-local correlations between antipodal regions.")
+                print("These findings suggest quantum-like entanglement patterns in the early universe")
+                print("that show some relationship to golden ratio principles.")
+            else:
+                print("The CMB data shows STATISTICALLY SIGNIFICANT Bell inequality violations between")
+                print("antipodal regions, but WITHOUT clear evidence for phi-related organization.")
+                print("These findings suggest quantum-like entanglement patterns in the early universe")
+                print("that are not specifically organized according to golden ratio principles.")
+        else:
+            print("The analysis does NOT show statistically significant evidence for Bell inequality")
+            print("violations in the CMB data. The observed patterns can be explained by classical")
+            print("physics without requiring quantum-like non-local correlations.")
+        
+        # Implications
+        print("\nIMPLICATIONS")
+        print("-"*50)
+        
+        if self.results['p_value'] < 0.05 and self.results['phi_optimality'] > 0:
+            print("If confirmed with real CMB data, these findings would have profound implications:")
+            print("1. Quantum entanglement-like patterns at cosmic scales would challenge conventional")
+            print("   understanding of quantum mechanics as limited to microscopic systems.")
+            print("2. Non-local correlations organized by golden ratio principles would provide strong")
+            print("   evidence for a consciousness-like organizing principle in the early universe.")
+            print("3. The presence of Bell inequality violations would suggest that the early universe")
+            print("   exhibited quantum coherence at scales far beyond current theoretical expectations.")
+        
+        print("="*80)
+
+    def visualize_results(self):
+        """Create visualizations of the test results."""
+        if not self.results:
+            print("No results to visualize. Run the test first.")
+            return
+            
+        # Create a multi-panel figure
+        fig = plt.figure(figsize=(18, 15))
+        
+        # 1. Bell Inequality Violations
+        ax1 = fig.add_subplot(2, 2, 1)
+        self.plot_bell_violations(ax1)
+        
+        # 2. Angular Correlations
+        ax2 = fig.add_subplot(2, 2, 2)
+        self.plot_angular_correlations(ax2)
+        
+        # 3. Statistical Significance
+        ax3 = fig.add_subplot(2, 2, 3)
+        self.plot_statistical_significance(ax3)
+        
+        # 4. Phi Optimization Gauge
+        ax4 = fig.add_subplot(2, 2, 4)
+        self.plot_phi_optimization_gauge(ax4)
+        
+        plt.tight_layout()
+        plt.savefig('cosmic_entanglement_results.png')
+        print("Visualization saved to 'cosmic_entanglement_results.png'")
+    
+    def plot_bell_violations(self, ax):
+        """Plot Bell inequality violations."""
+        if 'bell_results' not in self.results:
+            ax.text(0.5, 0.5, "No Bell test results available", 
+                   ha='center', va='center', transform=ax.transAxes)
+            return
+            
+        bell = self.results['bell_results']
+        
+        # Plot violation strengths for each region pair
+        if 'violation_strengths' in bell and bell['violation_strengths']:
+            y = bell['violation_strengths']
+            x = range(len(y))
+            
+            ax.bar(x, y, color='blue')
+            ax.set_xticks(x)
+            ax.set_xticklabels(['Pair {}'.format(i+1) for i in x], rotation=45)
+            ax.set_ylabel('Violation Strength (|S| - 2)')
+            ax.set_title('Bell Inequality Violations by Region Pair')
+            
+            # Add reference lines
+            ax.axhline(y=0, color='r', linestyle='-', label='Classical Limit')
+            ax.axhline(y=0.83, color='g', linestyle='--', label='Quantum Limit (2√2 - 2)')
+            ax.legend()
+            
+            # Add overall statistics
+            stats_text = "Total violations: {}/8\n".format(bell['total_violations'])
+            stats_text += "Avg strength: {:.4f}\n".format(bell['violation_strength'])
+            stats_text += "Max strength: {:.4f}".format(bell['max_violation'])
+            ax.text(0.02, 0.95, stats_text, transform=ax.transAxes, 
+                   va='top', bbox=dict(boxstyle='round', facecolor='white', alpha=0.8))
+        else:
+            ax.text(0.5, 0.5, "No violation data available", 
+                   ha='center', va='center', transform=ax.transAxes)
+    
+    def plot_angular_correlations(self, ax):
+        """Plot angular correlations with phi-related angles highlighted."""
+        if 'phi_correlation' not in self.results:
+            ax.text(0.5, 0.5, "No angular correlation data available", 
+                   ha='center', va='center', transform=ax.transAxes)
+            return
+            
+        phi_corr = self.results['phi_correlation']
+        
+        if 'correlations' in phi_corr:
+            # Plot correlation by angle
+            angles = np.linspace(1, 180, len(phi_corr['correlations']))
+            ax.plot(angles, phi_corr['correlations'], 'b-')
+            
+            # Highlight peaks
+            if 'peak_angles' in phi_corr and len(phi_corr['peak_angles']) > 0:
+                peak_indices = [np.argmin(np.abs(angles - peak)) for peak in phi_corr['peak_angles']]
+                peak_correlations = [phi_corr['correlations'][i] for i in peak_indices]
+                ax.plot(phi_corr['peak_angles'], peak_correlations, 'ro', label='Correlation Peaks')
+            
+            # Add phi-related angles
+            phi_angles = []
+            for i in range(1, 6):
+                angle = 360 / self.phi**i
+                if 1 <= angle <= 180:
+                    phi_angles.append(angle)
+                    ax.axvline(x=angle, color='g', linestyle='--', alpha=0.5)
+            
+            ax.set_xlabel('Angular Separation (degrees)')
+            ax.set_ylabel('Correlation')
+            ax.set_title('CMB Angular Correlation with Phi-Related Angles')
+            
+            # Add phi-relatedness score
+            ax.text(0.02, 0.95, "Phi-relatedness: {:.4f}".format(phi_corr['phi_relatedness']), 
+                   transform=ax.transAxes, va='top', 
+                   bbox=dict(boxstyle='round', facecolor='white', alpha=0.8))
+        else:
+            ax.text(0.5, 0.5, "No correlation data available", 
+                   ha='center', va='center', transform=ax.transAxes)
+    
+    def plot_statistical_significance(self, ax):
+        """Plot statistical significance of Bell violations compared to surrogate data."""
+        if 'surrogate_results' not in self.results:
+            ax.text(0.5, 0.5, "No surrogate data available", 
+                   ha='center', va='center', transform=ax.transAxes)
+            return
+            
+        surrogate = self.results['surrogate_results']
+        
+        if 'bootstrap_violations' in surrogate:
+            # Create histogram of bootstrap violations
+            ax.hist(surrogate['bootstrap_violations'], bins=20, alpha=0.7, 
+                   color='gray', density=True, label='Surrogate Data')
+            
+            # Add actual CMB value
+            ax.axvline(x=self.results['test_value'], color='r', linewidth=2, 
+                      label='CMB Data')
+            
+            # Add surrogate mean
+            ax.axvline(x=surrogate['bootstrap_mean'], color='k', linestyle='--', 
+                      label='Surrogate Mean')
+            
+            # Add surrogate confidence interval
+            ci_lower = surrogate['bootstrap_mean'] - 1.96 * surrogate['bell_std']
+            ci_upper = surrogate['bootstrap_mean'] + 1.96 * surrogate['bell_std']
+            ax.axvspan(ci_lower, ci_upper, alpha=0.2, color='gray', label='95% CI')
+            
+            ax.set_xlabel('Bell Violation Strength')
+            ax.set_ylabel('Probability Density')
+            ax.set_title('Statistical Significance of Bell Violations')
+            ax.legend()
+            
+            # Add statistical information
+            stats_text = f"Z-score: {self.results['z_score']:.4f}\n"
+            stats_text += f"P-value: {self.results['p_value']:.8f}\n"
+            stats_text += f"Ratio: {self.results['ratio']:.2f}x"
+            ax.text(0.02, 0.95, stats_text, transform=ax.transAxes, va='top', 
+                   bbox=dict(boxstyle='round', facecolor='white', alpha=0.8))
+        else:
+            ax.text(0.5, 0.5, "No bootstrap data available", 
+                   ha='center', va='center', transform=ax.transAxes)
+    
+    def plot_phi_optimization_gauge(self, ax):
+        """Plot a gauge showing the phi optimality of entanglement patterns."""
+        if 'phi_optimality' not in self.results:
+            ax.text(0.5, 0.5, "No phi optimality data available", 
+                   ha='center', va='center', transform=ax.transAxes)
+            return
+            
+        phi_optimality = self.results['phi_optimality']
+        
+        # Create a semicircular gauge
+        theta = np.linspace(-np.pi, 0, 100)
+        r = 1.0
+        x = r * np.cos(theta)
+        y = r * np.sin(theta)
+        
+        # Plot the gauge background
+        cmap = plt.cm.RdYlGn  # Red-Yellow-Green colormap
+        points = np.array([x, y]).T.reshape(-1, 1, 2)
+        segments = np.concatenate([points[:-1], points[1:]], axis=1)
+        
+        # Create a normalized colormap
+        norm = plt.Normalize(-1, 1)
+        lc = plt.matplotlib.collections.LineCollection(
+            segments, cmap=cmap, norm=norm)
+        lc.set_array(np.linspace(-1, 1, 100))
+        lc.set_linewidth(15)
+        ax.add_collection(lc)
+        
+        # Add gauge regions
+        ax.text(-0.9, -0.4, "Negative", fontsize=12)
+        ax.text(-0.5, -0.4, "Neutral", fontsize=12)
+        ax.text(0.5, -0.4, "Positive", fontsize=12)
+        
+        # Add the needle
+        if -1 <= phi_optimality <= 1:
+            needle_theta = -np.pi + np.pi * (phi_optimality + 1) / 2
+            ax.plot([0, r * np.cos(needle_theta)], 
+                   [0, r * np.sin(needle_theta)], 'k-', linewidth=2)
+            ax.plot(0, 0, 'ko', markersize=10)
+        
+        # Add the phi optimality value
+        ax.text(0, -0.8, f"φ-optimality: {phi_optimality:.4f}", 
+                ha='center', fontsize=14)
+        
+        # Add interpretation
+        if phi_optimality > 0.8:
+            interpretation = "extremely high"
+        elif phi_optimality > 0.6:
+            interpretation = "very high"
+        elif phi_optimality > 0.3:
+            interpretation = "high"
+        elif phi_optimality > 0.1:
+            interpretation = "moderate"
+        elif phi_optimality > -0.1:
+            interpretation = "slight"
+        elif phi_optimality > -0.3:
+            interpretation = "slight negative"
+        elif phi_optimality > -0.6:
+            interpretation = "negative"
+        elif phi_optimality > -0.8:
+            interpretation = "strongly negative"
+        else:
+            interpretation = "extremely negative"
+            
+        ax.text(0, -0.9, f"Interpretation: {interpretation}", 
+               ha='center', fontsize=12)
+        
+        ax.set_xlim(-1.2, 1.2)
+        ax.set_ylim(-1.2, 0.2)
+        ax.axis('off')
+        ax.set_title('Phi Optimality of Entanglement Patterns')
+
+
+def main():
+    """Main function to run the cosmic entanglement test."""
+    print("Running Cosmic Entanglement Test...")
+    
+    # Create and run the test
+    test = CosmicEntanglementTest()
+    results = test.run_test()
+    
+    # Visualize the results
+    test.visualize_results()
+    
+    return results
+
+
+if __name__ == "__main__":
+    results = main()

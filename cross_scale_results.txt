@@ -1,0 +1,10 @@
+=== CROSS-SCALE CORRELATIONS TEST RESULTS ===
+
+Mean phi-related correlation: 0.9641
+Mean random correlation: 0.6493
+Ratio: 1.48x
+Z-score: 2.27σ
+P-value: 0.01174874
+
+Interpretation: The test shows a weak effect that is significant.
+Scales separated by powers of the golden ratio show 1.48x stronger correlation than random scale relationships.

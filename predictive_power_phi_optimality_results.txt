@@ -1,0 +1,11 @@
+=== PREDICTIVE POWER TEST RESULTS WITH PHI OPTIMALITY ===
+
+Match rate for GR predictions: 0.1571
+Mean match rate for random predictions: 0.0525
+Prediction power (ratio): 3.00x
+Z-score: 4.07
+P-value: 0.00002393
+Phi optimality: 0.6652
+
+Phi optimality interpretation: very high
+The predictive power test shows a very high alignment with golden ratio optimality.

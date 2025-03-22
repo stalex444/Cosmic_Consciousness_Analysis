@@ -1,0 +1,25 @@
+=== SCALE FREQUENCY COUPLING ANALYSIS RESULTS ===
+
+1. Scale-Dependent Golden Ratio Frequencies:
+   Scale range 2: center ℓ = 156.3, GR frequency = 0.1667
+   Scale range 3: center ℓ = 329.6, GR frequency = 0.1786
+   Scale range 4: center ℓ = 695.0, GR frequency = 0.1083
+   Scale range 5: center ℓ = 1465.5, GR frequency = 0.1222
+
+2. Scale-Frequency Correlation Analysis:
+   Correlation: -0.7744
+   P-value: 0.2256
+   Random correlation: 0.0000
+   Z-score: -1.3266
+   Corrected p-value: 0.0923
+
+3. Model Comparison:
+   Linear model MSE: 0.000346
+   Phi-based model MSE: 0.000346
+   Model ratio: 1.00x
+   Phi optimality: 0.0000
+   Interpretation: slight
+
+Summary:
+The analysis does not show significant scale-dependent coupling of golden ratio patterns in the CMB data.
+Phi optimality: 0.0000 (slight)

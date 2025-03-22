@@ -1,0 +1,25 @@
+================================================================================
+COSMIC CONSCIOUSNESS ANALYSIS REPORT
+================================================================================
+
+Analysis completed on: 2025-03-22 13:04:02
+
+COMBINED SIGNIFICANCE
+--------------------------------------------------
+Fisher's method:
+  Chi-square: -0.0000
+  Degrees of freedom: 2
+  Combined p-value: 1.000000
+  Significant: False
+
+Phi dominance: 0.00%
+
+INDIVIDUAL TEST RESULTS
+--------------------------------------------------
+
+Test: Golden Ratio Test
+  Avg Phi optimality: 0.675123
+  P-value: 1.000000
+  Significant: False
+  Best constant: 44.4747 (0.675123)
+  95% Confidence interval: [0.675123, 0.675123]

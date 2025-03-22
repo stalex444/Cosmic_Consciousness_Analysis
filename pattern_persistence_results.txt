@@ -1,0 +1,11 @@
+=== PATTERN PERSISTENCE TEST RESULTS ===
+
+Mean GR pattern strength: 0.6948
+Mean random pattern strength: 0.6812
+Strength ratio: 1.02x
+Z-score: 0.99
+P-value: 0.32379327
+Persistence ratio: 1.15
+
+Interpretation: The test shows a negligible effect that is not significant.
+Golden ratio patterns are 1.15x more consistent across different subsets of the data than random patterns, indicating they are slightly persistent.

@@ -1,0 +1,43 @@
+=== EXTENDED META-COHERENCE ANALYSIS RESULTS ===
+
+1. Meta-Coherence:
+   Actual: 0.189023
+   Random: 0.182516
+   Ratio: 1.04x
+   Z-score: 0.0210
+   P-value: 0.4916
+
+2. Skewness:
+   Actual: 2.446878
+   Random: 1.548049
+   Ratio: 1.58x
+   Z-score: 1.0308
+   P-value: 0.1513
+
+3. Kurtosis:
+   Actual: 5.435257
+   Random: 3.031106
+   Ratio: 1.79x
+   Z-score: 0.5782
+   P-value: 0.2816
+
+4. Entropy:
+   Actual: -1.065011
+   Random: -0.107896
+   Ratio: 1.00x
+   Z-score: -4.3299
+   P-value: 0.0000
+
+5. Power Law Exponent:
+   Actual: -1.992151
+   Random: -1.003799
+   Ratio: 1.98x
+   Z-score: -2.3255
+   P-value: 0.0100
+
+Overall significance (mean p-value): 0.1869
+
+Summary:
+The analysis does not provide strong evidence for non-random meta-coherence properties
+in the CMB data. The observed patterns are largely consistent with what would be expected
+from random processes.

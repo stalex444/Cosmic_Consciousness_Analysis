@@ -1,0 +1,15 @@
+=== TRANSFER ENTROPY ANALYSIS RESULTS ===
+
+1. Phi-based scales transfer entropy: 8.834354
+2. Random scales transfer entropy: 0.118128
+3. Transfer entropy ratio: 74.79x
+4. Statistical significance:
+   Z-score: 63.2291
+   P-value: 0.0000
+
+5. Phi optimality: 1.0000 (extremely high)
+
+Summary:
+The analysis shows significant information transfer across scales following golden ratio patterns in the CMB data.
+The phi-based scales show higher transfer entropy than random scales, suggesting that the golden ratio pattern facilitates information transfer across scales.
+Phi optimality: 1.0000 (extremely high)

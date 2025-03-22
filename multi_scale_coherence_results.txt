@@ -1,0 +1,15 @@
+=== MULTI-SCALE COHERENCE ANALYSIS RESULTS ===
+
+1. Scale coherence measurements: 11 scale bins
+2. Coherence ratios: 10 ratios
+3. Mean deviation from phi: 1.127794
+4. Mean random deviation: 1.380114
+5. Statistical significance:
+   Z-score: -0.5614
+   P-value: 0.5745
+
+6. Optimization ratio: 1.22x
+7. Phi optimality: 0.3657 (high)
+
+Summary:
+The analysis shows some evidence that coherence varies across scales in a pattern related to the golden ratio, but it does not reach statistical significance.
