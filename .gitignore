@@ -114,3 +114,21 @@ dmypy.json
 *.fits
 *.npy
 *.npz
+*.tar.gz
+*.dylib
+
+# Specific large directories
+planck_data/maps/
+planck_data/likelihood/
+planck_data/*.tar.gz
+.git/objects/pack/
+
+# Virtual Environment
+venv/
+ENV/
+env/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
