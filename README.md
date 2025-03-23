@@ -134,15 +134,23 @@ By default, the analysis uses simulated data. No additional downloads are requir
 
 To use actual Planck CMB data:
 
-1. Visit the [Planck Legacy Archive](https://pla.esac.esa.int/)
-2. Download the CMB power spectrum data (COM_PowerSpect_CMB-TT-full_R3.01.txt)
-3. Place the downloaded file in the `planck_data/` directory
-
-Alternatively, you can use the provided script to download the data:
+1. Use the provided data download script:
 
 ```bash
-python planck_data/download_planck_data.py
+# Download all data files
+python download_data.py
+
+# Download only specific data files
+python download_data.py --planck_data
+
+# Force re-download of data files
+python download_data.py --force
 ```
+
+2. Alternatively, you can manually download the data:
+   - Visit the [Planck Legacy Archive](https://pla.esac.esa.int/)
+   - Download the CMB power spectrum data (COM_PowerSpect_CMB-TT-full_R3.01.txt)
+   - Place the downloaded file in the `planck_data/` directory
 
 For more detailed instructions, see the README in the `planck_data/` directory.
 
